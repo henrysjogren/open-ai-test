@@ -9,7 +9,7 @@ const AssistantComponent = () => {
   const [messageHistory, setMessageHistory] = useState([]);
   const [polling, setPolling] = useState(false);
 
-  async function createAssistant() {
+  async function awakeAssistant() {
     setActiveConversation(true);
     const openAiAssistant = await openAiInstance.beta.assistants.retrieve(
       process.env.REACT_APP_ASSISTANT_ID
@@ -75,33 +75,10 @@ const AssistantComponent = () => {
     <div>
       <h2>AI Assistant</h2>
       {!activeConversation && (
-        <button onClick={createAssistant}>Start a conversation</button>
+        <button onClick={awakeAssistant}>Start a conversation</button>
       )}
       <div className={styles["feature-container"]}>
-        <div
-          className={
-            !activeConversation
-              ? styles["display-none"]
-              : styles["conversation-container"]
-          }
-        >
-          <div className={styles["history-container"]}>
-            {polling && <div className={styles.loader}></div>}
-            {messageHistory !== null &&
-              messageHistory.map((m) => (
-                <p
-                  key={m.id}
-                  className={
-                    m.role === "assistant"
-                      ? `${styles["chat-message"]} ${styles.left}`
-                      : `${styles["chat-message"]} ${styles.right}`
-                  }
-                >
-                  {m.content[0].text.value}
-                </p>
-              ))}
-          </div>
-        </div>
+
         {activeConversation && (
           <form onSubmit={sendMessage}>
             <input
