@@ -1,9 +1,10 @@
-import styles from "../App.module.scss"
+import styles from "../App.module.scss";
+import AssistantComponent from "../Components/AssistantComponent/AssistantComponent";
 
 const Assistant = () => {
   return (
     <div className={styles["main-area"]}>
-      <h2>AI Assistant</h2>
+      <AssistantComponent />
     </div>
   );
 };

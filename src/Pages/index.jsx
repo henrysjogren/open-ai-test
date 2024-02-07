@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div className={styles["main-area"]}>
             <h1>AI?</h1>
-            <img src={poster}/>
+            <img src={poster} alt={"AI generated pizza and computer screen"}/>
         </div>
     );
 };

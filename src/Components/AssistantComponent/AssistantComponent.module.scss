@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+button {
+  padding: 10px;
+}
+.display-none {
+  display: none;
+  height: 0;
+  width: 0;
+}
+.feature-container {
+  display: flex;
+  gap: 0;
+  margin: 10px;
+  flex-direction: column;
+  background: white;
+  border-radius: 5px;
+  .conversation-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 600px;
+    transition: 300ms ease-in-out height;
+    border: none;
+    justify-content: end;
+    form {
+      width: 0;
+    }
+    .history-container {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100%;
+      padding: 10px;
+      overflow: scroll;
+      .chat-message {
+        text-transform: none;
+        font-size: 12px;
+        color: black;
+        position: relative;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .right {
+        margin-left: 10%;
+        background: lightgreen;
+        text-align: right;
+        float: right;
+      }
+      .left {
+        background: lightblue;
+        margin-right: 10%;
+        text-align: left;
+        float: left;
+      }
+    }
+  }
+  form {
+    padding: 0 10px 10px;
+    border: none;
+    border-radius: 5px;
+    .conversation-input {
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      height: 45px;
+      border: none;
+      border-top: 1px rgb(186, 186, 186) solid;
+    }
+  }
+
+  .loader {
+    width: 5px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    animation: l5 1s infinite linear alternate;
+    align-self: center;
+  }
+  @keyframes l5 {
+    0% {
+      box-shadow: 20px 0 #7c7c7c, -20px 0 #c1c1c1; //000 //0002
+      background: #7c7c7c; 
+    }
+    33% {
+      box-shadow: 20px 0 #7c7c7c, -20px 0 #c1c1c1;
+      background: #c1c1c1;
+    }
+    66% {
+      box-shadow: 20px 0 #c1c1c1, -20px 0 #7c7c7c;
+      background: #c1c1c1;
+    }
+    100% {
+      box-shadow: 20px 0 #c1c1c1, -20px 0 #7c7c7c;
+      background: #7c7c7c;
+    }
+  }
+}

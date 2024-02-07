@@ -3,11 +3,23 @@ import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   return (
-    <div className={styles["navigation-bar"]}>
-      <Link to="/" activeStyle>Home</Link>
-      <Link to="/chat">Chat</Link>
-      <Link to="/assistant">Assistant</Link>
-    </div>
+    <nav
+      className={styles["navigation-bar"]}
+      role="navigation"
+      aria-labelledby="mainmenulabel"
+    >
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/chat">Chat</Link>
+        </li>
+        <li>
+          <Link to="/assistant">Assistant</Link>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

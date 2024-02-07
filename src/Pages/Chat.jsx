@@ -1,4 +1,4 @@
-import AiComponent from "../Components/AiComponent/AiComponent";
+import ChatComponent from "../Components/ChatComponent/ChatComponent";
 import Output from "../Components/Output/Output";
 import { useState } from "react";
 import styles from "../App.module.scss";
@@ -12,7 +12,7 @@ const Chat = () => {
   };
   return (
     <div className={styles["main-area"]}>
-      <AiComponent
+      <ChatComponent
         getOutput={getOutput}
         setLoading={setIsLoading}
         emptyOutput={setOutput}
